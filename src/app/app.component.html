@@ -1,17 +1,33 @@
-
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-          <a class="md-nav-item nav-link" style="font-size: 130%" routerLink="/">Home</a>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a class="md-nav-item nav-link" style="font-size: 100%;" routerLink="/">Hi {{ currentUser.firstName }}!</a>
-          <li><a class="md-nav-item nav-link" (click)="logout()" style="color: red">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <a class="md-nav-item nav-link" style="font-size: 130%" routerLink="/"
+        >Home</a
+      >
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a class="md-nav-item nav-link" style="font-size: 100%;" routerLink="/"
+          >Hi {{ currentUser.firstName }}!</a
+        >
+      </li>
+      <li>
+        <a
+          class="md-nav-item nav-link"
+          style="font-size: 100%;"
+          routerLink="/user-profile"
+          >Profile</a
+        >
+      </li>
+      <li>
+        <a class="md-nav-item nav-link" (click)="logout()" style="color: red"
+          >Logout</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- main content container -->
 <div class="jumbotron">
