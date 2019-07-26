@@ -2,6 +2,13 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule
+} from "@angular/material";
 
 // used to create fake backend
 import { fakeBackendProvider } from "./_helpers";
@@ -14,13 +21,20 @@ import { LoginComponent } from "./login";
 import { UserComponent } from "./user-profile";
 import { RegisterComponent } from "./register";
 import { AlertComponent } from "./_components";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,

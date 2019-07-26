@@ -1,5 +1,22 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>Menu</h1>
+    <span class="menu-spacer"></span>
+    <div style>
+      <a mat-button routerLink="/">Home</a>
+      <a mat-button routerLink="/user-profile">Profile</a>
+      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+      <a mat-button (click)="logout()">Logout</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <a class="md-nav-item nav-link" style="font-size: 130%" routerLink="/"
@@ -25,7 +42,7 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
 
 <!-- main content container -->
 <div class="jumbotron">
