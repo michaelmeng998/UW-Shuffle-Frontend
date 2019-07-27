@@ -6,4 +6,8 @@
     {{ user.username }} ({{ user.firstName }} {{ user.lastName }}) -
     <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
   </li>
+
+  <li *ngFor="let type of types">
+    {{ type.name }}
+  </li>
 </ul>

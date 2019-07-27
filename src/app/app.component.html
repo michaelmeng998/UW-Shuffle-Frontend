@@ -1,16 +1,40 @@
 <!-- nav -->
+<mat-toolbar *ngIf="currentUser" class="logo-toolbar"
+  ><img
+    src="../assets/images/Shuffle logo.png"
+    alt="Main Logo"
+    height="40rem"
+    width="auto"
+  />
 
-<mat-toolbar color="primary" *ngIf="currentUser">
-  <mat-toolbar-row>
+  <div class="logo-toolbar-icons">
+    <mat-icon
+      class="logo-toolbar-icon"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      routerLink="/"
+      >home</mat-icon
+    >
+    <mat-icon class="logo-toolbar-icon" routerLink="/user-profile"
+      >account_circle</mat-icon
+    >
+    <mat-icon class="logo-toolbar-icon" (click)="logout()"
+      >power_settings_new</mat-icon
+    >
+  </div>
+</mat-toolbar>
+
+<mat-toolbar *ngIf="currentUser" class="toolbar">
+  <mat-toolbar-row class="toolbar-text">
     <button mat-icon-button>
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </button>
-    <h1>Menu</h1>
     <span class="menu-spacer"></span>
     <div style>
       <a mat-button routerLink="/">Home</a>
       <a mat-button routerLink="/user-profile">Profile</a>
-      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+      <a mat-button [routerLink]="'/create-activity'"> Rentals </a>
+      <a mat-button [routerLink]="'/create-activity'"> Notifications </a>
       <a mat-button (click)="logout()">Logout</a>
     </div>
   </mat-toolbar-row>
@@ -55,3 +79,22 @@
     </div>
   </div>
 </div>
+
+<footer class="page-footer">
+  <mat-toolbar class="page-footer-toolbar">
+    <p>
+      <img
+        src="../assets/images/Shuffle logo.png"
+        alt="Main Logo"
+        height="50rem"
+        width="auto"
+      />
+    </p>
+    <p>
+      Waterloo Univserity
+    </p>
+    <p>
+      About Us
+    </p>
+  </mat-toolbar>
+</footer>

@@ -2,34 +2,35 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
+        <div class="card-avatar"></div>
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">Edit Profile</h4>
+            <h4 class="card-title">Your Profile</h4>
             <p class="card-category">Complete your profile</p>
           </div>
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                formControlName="username"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              />
+              <div
+                *ngIf="submitted && f.username.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.username.errors.required">
+                  Username is required
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card card-profile">
-          <div class="card-avatar">
-            <a href="javascript:void(0)">
-              <img class="img" src="./assets/img/faces/marc.jpg" />
-            </a>
-          </div>
-          <div class="card-body">
-            <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-            <h4 class="card-title">Alec Thompson</h4>
-            <p class="card-description">
-              Don't be scared of the truth because we need to restart the human
-              foundation in truth And I love you like Kanye loves Kanye I love
-              Rick Owens’ bed design but the back is...
-            </p>
-            <a href="javascript:void(0)" class="btn btn-danger btn-round"
-              >Follow</a
-            >
-          </div>
-        </div>
+        <div class="card card-profile"></div>
       </div>
     </div>
   </div>
