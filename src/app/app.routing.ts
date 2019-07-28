@@ -9,7 +9,8 @@ import { LandingComponent } from "./landing";
 import { AuthGuard } from "./_helpers";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+  { path: "", component: LandingComponent },
+  { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "landing", component: LandingComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
