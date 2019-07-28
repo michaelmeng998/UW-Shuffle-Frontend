@@ -25,6 +25,7 @@ import { UserComponent } from "./user-profile";
 import { RegisterComponent } from "./register";
 import { AlertComponent } from "./_components";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { LandingComponent } from "./landing/landing.component";
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    UserComponent
+    UserComponent,
+    LandingComponent
   ],
   providers: [
     ServerService,

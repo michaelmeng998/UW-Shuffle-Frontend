@@ -1,0 +1,61 @@
+.header1 {
+  color: #f3c677;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.landing-page {
+  width: 95%;
+  height: 30rem;
+  margin: 0 auto;
+  background-color: #232f3e;
+}
+
+.landing-options {
+  display: inline-block;
+  margin-left: 40rem;
+}
+
+.landing-options button {
+  margin-left: 1rem;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: #f3c677;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  width: 4rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 1rem;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

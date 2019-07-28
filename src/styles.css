@@ -4,7 +4,18 @@
 html,
 body {
   height: 100%;
+  /* background: url(./assets/images/login-page.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
 }
+
+.login-content {
+  color: black;
+  text-align: center;
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -16,14 +27,14 @@ body {
   margin-bottom: -0.75rem;
 }
 
+.logo-toolbar-icons {
+  margin-left: 81vw;
+  position: relative;
+}
+
 .logo-toolbar-icon {
   cursor: pointer;
   margin-left: 0.5rem;
-}
-
-.logo-toolbar-icons {
-  margin-left: 83vw;
-  position: relative;
 }
 
 .toolbar {
@@ -37,19 +48,18 @@ body {
 }
 
 .page-footer {
-  width: 100%;
   display: flex;
-  height: 5rem;
-  margin-top: 3rem;
+  position: relative;
+  bottom: 0;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .page-footer-toolbar {
+  margin-top: 0.5rem;
   justify-content: space-between;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  max-height: 5rem;
-  min-height: 5rem;
-  color: black;
-  background-color: white;
+  font-size: 0.5rem;
+  color: white;
+  background-color: #232f3e;
 }
