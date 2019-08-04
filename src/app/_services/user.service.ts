@@ -18,4 +18,8 @@ export class UserService {
   delete(id) {
     return this.http.delete(`${environment.apiUrl}/users/${id}`);
   }
+
+  node_register(user) {
+    return this.http.post(`${environment.apiUrl}/api/users`, user);
+  }
 }

@@ -95,3 +95,9 @@
 .col-header {
   color: #f3c677;
 }
+
+.line {
+  width: 75%;
+  margin: 0 auto;
+  border-bottom: 1px solid #232f3e;
+}
