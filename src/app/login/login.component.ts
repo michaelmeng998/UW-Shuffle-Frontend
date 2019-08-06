@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { first } from "rxjs/operators";
+import { first, tap } from "rxjs/operators";
 
 import { AuthenticationService, AlertService } from "../_services";
 
@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+
+  error_log: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ["", Validators.required],
+      email: ["", Validators.required],
       password: ["", Validators.required]
     });
 
@@ -53,13 +55,15 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.authenticationService
-      .login(this.f.username.value, this.f.password.value)
+      .login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
         },
         error => {
+          this.error_log = error;
+          console.log("error is: " + this.error_log);
           this.alertService.error(error);
           this.loading = false;
         }

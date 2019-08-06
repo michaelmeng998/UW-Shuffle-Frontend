@@ -22,23 +22,23 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadAllUsers();
+    // this.loadAllUsers();
     this.getAllTypes();
   }
 
-  deleteUser(id: number) {
-    this.userService
-      .delete(id)
-      .pipe(first())
-      .subscribe(() => this.loadAllUsers());
-  }
+  // deleteUser(id: number) {
+  //   this.userService
+  //     .delete(id)
+  //     .pipe(first())
+  //     .subscribe(() => this.loadAllUsers());
+  // }
 
-  private loadAllUsers() {
-    this.userService
-      .getAll()
-      .pipe(first())
-      .subscribe(users => (this.users = users));
-  }
+  // private loadAllUsers() {
+  //   this.userService
+  //     .getAll()
+  //     .pipe(first())
+  //     .subscribe(users => (this.users = users));
+  // }
 
   private getAllTypes() {
     this.serverService.getTypes().subscribe(type => (this.types = type));

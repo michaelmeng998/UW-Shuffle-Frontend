@@ -12,12 +12,12 @@ import {
 } from "@angular/material";
 
 // used to create fake backend
-import { fakeBackendProvider } from "./_helpers";
+// import { fakeBackendProvider } from "./_helpers";
 
 import { ServerService } from "./_services/server.service";
 
 import { appRoutingModule } from "./app.routing";
-import { JwtInterceptor, ErrorInterceptor } from "./_helpers";
+// import { JwtInterceptor, ErrorInterceptor } from "./_helpers";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home";
 import { LoginComponent } from "./login";
@@ -50,12 +50,12 @@ import { LandingComponent } from "./landing/landing.component";
     LandingComponent
   ],
   providers: [
-    ServerService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    ServerService
+    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    fakeBackendProvider
+    // fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

@@ -10,6 +10,8 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
+  Data: any;
+
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(
       JSON.parse(localStorage.getItem("currentUser"))
@@ -21,12 +23,16 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username, password) {
+  //login api call
+  login(email, password): Observable<any> {
+    // console.log("inside login auth service...");
+    // console.log("email is: " + email + " and password is: " + password);
     return this.http
-      .post<any>(`${environment.apiUrl}/users/authenticate`, {
-        username,
-        password
-      })
+      .post(
+        `${environment.apiUrl}/api/auth`,
+        { email, password },
+        { responseType: "text" }
+      )
       .pipe(
         map(user => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -37,6 +43,7 @@ export class AuthenticationService {
       );
   }
 
+  //logout api call removes JWT token from web storage/cookie
   logout() {
     // remove user from local storage and set current user to null
     localStorage.removeItem("currentUser");
