@@ -12,8 +12,6 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
 
-  error_log: any;
-
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -62,8 +60,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.error_log = error;
-          console.log("error is: " + this.error_log);
           this.alertService.error(error);
           this.loading = false;
         }

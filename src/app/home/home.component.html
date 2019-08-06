@@ -1,13 +1,32 @@
-<h1>Hi {{ currentUser.firstName }}!</h1>
-<p>You're logged in with Angular 7!!</p>
+<link
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+
+<h1 class="header1">Start Shuffling Now {{ currentUser.firstName }}!</h1>
 
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h3>All registered users:</h3>
+            <form action="" [formGroup]="searchForm">
+              <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <button id="button-addon7" type="submit" class="btn">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+                <input
+                  type="search"
+                  placeholder="What're you searching for?"
+                  aria-describedby="button-addon7"
+                  class="form-control"
+                />
+              </div>
+            </form>
+
             <ul>
               <li *ngFor="let user of users">
                 {{ user.username }} ({{ user.firstName }} {{ user.lastName }}) -

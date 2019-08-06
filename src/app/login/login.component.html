@@ -4,14 +4,14 @@
     src="../../assets/images/Shuffle logo.png"
     alt="shuffle logo"
     style="height:5rem; width:auto; margin-top: 3rem; cursor: pointer;"
-    routerLink="/"
+    routerLink="/landing"
   />
   <div class="container">
     <h5 style="margin-top: 1rem; margin-bottom: 0">Log in</h5>
     <h6 style="margin-bottom: 1rem; padding: 0 ;color:lightgray">
       Continue shuffling
     </h6>
-    <div class="col-md-4 offset-md-4">
+    <div class="col-md-6 offset-md-3">
       <form
         [formGroup]="loginForm"
         (ngSubmit)="onSubmit()"
