@@ -24,7 +24,6 @@ export class JwtInterceptor implements HttpInterceptor {
       "current user info: " + this.authenticationService.currentUserValue
     );
     if (currentUser) {
-      console.log("preparing to intercept request to add token...");
       //making clone of request first
       request = request.clone({
         setHeaders: {
