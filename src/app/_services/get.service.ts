@@ -4,10 +4,14 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "@environments/environment";
 
 @Injectable()
-export class ServerService {
+export class GetService {
   constructor(private http: HttpClient) {}
 
   getTypes() {
-    return this.http.get<any[]>("http://localhost:3000/api/types");
+    return this.http.get<any[]>(`${environment.apiUrl}/api/types`);
+  }
+
+  getHardware() {
+    return this.http.get<any[]>(`${environment.apiUrl}/api/hardware`);
   }
 }

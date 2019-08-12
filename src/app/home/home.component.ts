@@ -2,11 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { first } from "rxjs/operators";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import {
-  UserService,
-  AuthenticationService,
-  ServerService
-} from "../_services";
+import { UserService, AuthenticationService, GetService } from "../_services";
 
 @Component({
   templateUrl: "home.component.html",
@@ -17,11 +13,12 @@ export class HomeComponent implements OnInit {
   currentUser: any;
   users = [];
   types = [];
+  hardware = [];
 
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private serverService: ServerService,
+    private GetService: GetService,
     private formBuilder: FormBuilder
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
@@ -33,6 +30,7 @@ export class HomeComponent implements OnInit {
     });
     // this.loadAllUsers();
     this.getAllTypes();
+    this.getAllHardware();
   }
 
   // deleteUser(id: number) {
@@ -50,6 +48,12 @@ export class HomeComponent implements OnInit {
   // }
 
   private getAllTypes() {
-    this.serverService.getTypes().subscribe(type => (this.types = type));
+    this.GetService.getTypes().subscribe(type => (this.types = type));
+  }
+
+  private getAllHardware() {
+    this.GetService.getHardware().subscribe(
+      hardware => (this.hardware = hardware)
+    );
   }
 }

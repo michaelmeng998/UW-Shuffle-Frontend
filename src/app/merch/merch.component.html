@@ -1,0 +1,27 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card-avatar"></div>
+  <div class="card">
+    <div class="card-header card-header-danger">
+      <h4 class="card-title">Shuffle now</h4>
+      <p class="card-category">Complete the form</p>
+    </div>
+    <form [formGroup]="merchForm" (ngSubmit)="onSubmit()" class="card-body">
+      <div class="form-group" style="margin-bottom:0.5rem">
+        <label for="name">Type</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Electronics"
+        />
+      </div>
+      <button [disabled]="loading" class="button">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

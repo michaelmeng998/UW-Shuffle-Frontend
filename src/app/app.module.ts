@@ -12,12 +12,13 @@ import {
 } from "@angular/material";
 
 // used to create fake backend
-// import { fakeBackendProvider } from "./_helpers";
+import { fakeBackendProvider } from "./_helpers";
 
-import { ServerService } from "./_services/server.service";
+import { GetService } from "./_services/get.service";
+import { PostService } from "./_services/post.service";
 
 import { appRoutingModule } from "./app.routing";
-// import { JwtInterceptor, ErrorInterceptor } from "./_helpers";
+import { JwtInterceptor, ErrorInterceptor } from "./_helpers";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home";
 import { LoginComponent } from "./login";
@@ -26,6 +27,7 @@ import { RegisterComponent } from "./register";
 import { AlertComponent } from "./_components";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LandingComponent } from "./landing/landing.component";
+import { MerchComponent } from "./merch/merch.component";
 
 @NgModule({
   imports: [
@@ -47,15 +49,17 @@ import { LandingComponent } from "./landing/landing.component";
     RegisterComponent,
     AlertComponent,
     UserComponent,
-    LandingComponent
+    LandingComponent,
+    MerchComponent
   ],
   providers: [
-    ServerService
-    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    GetService,
+    PostService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend
-    // fakeBackendProvider
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

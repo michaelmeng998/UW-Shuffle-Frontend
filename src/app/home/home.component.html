@@ -26,15 +26,9 @@
                 />
               </div>
             </form>
-
             <ul>
-              <li *ngFor="let user of users">
-                {{ user.username }} ({{ user.firstName }} {{ user.lastName }}) -
-                <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-              </li>
-
-              <li *ngFor="let type of types">
-                {{ type.name }}
+              <li *ngFor="let item of hardware">
+                {{ item.name }}
               </li>
             </ul>
           </div>
