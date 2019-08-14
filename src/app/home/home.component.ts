@@ -33,20 +33,6 @@ export class HomeComponent implements OnInit {
     this.getAllHardware();
   }
 
-  // deleteUser(id: number) {
-  //   this.userService
-  //     .delete(id)
-  //     .pipe(first())
-  //     .subscribe(() => this.loadAllUsers());
-  // }
-
-  // private loadAllUsers() {
-  //   this.userService
-  //     .getAll()
-  //     .pipe(first())
-  //     .subscribe(users => (this.users = users));
-  // }
-
   private getAllTypes() {
     this.GetService.getTypes().subscribe(type => (this.types = type));
   }

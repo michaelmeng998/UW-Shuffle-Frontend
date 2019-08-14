@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { PostService } from "../_services";
-import { first } from "rxjs/operators";
+import { first, map } from "rxjs/operators";
 
 @Component({
   selector: "app-merch",
@@ -21,12 +21,11 @@ export class MerchComponent implements OnInit {
 
   ngOnInit() {
     this.merchForm = this.formBuilder.group({
-      name: ["", Validators.required]
+      name: ["", Validators.required],
+      typeId: ["", Validators.required],
+      numberInStock: ["", Validators.required],
+      dailyRentalRate: ["", Validators.required]
     });
-  }
-
-  get f() {
-    return this.merchForm.controls;
   }
 
   onSubmit() {
@@ -38,7 +37,11 @@ export class MerchComponent implements OnInit {
     }
 
     this.loading = true;
-    this.PostService.PostTypes(this.merchForm.value)
+    // this.PostService.PostTypes(this.merchForm.value)
+    //   .pipe(first())
+    //   .subscribe();
+
+    this.PostService.PostHardware(this.merchForm.value)
       .pipe(first())
       .subscribe();
   }
